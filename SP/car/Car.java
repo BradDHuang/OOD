@@ -9,7 +9,8 @@ public class Car {
         counter++; // test for Singleton.
     }
 
-    public static Car getInstance() {
+    // public static Car getInstance() {
+    public synchronized static Car getInstance() { // Thread-safe.
         if (INSTANCE == null) INSTANCE = new Car(); // Singleton!
         return INSTANCE;
     }
